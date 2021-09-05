@@ -15,8 +15,9 @@ const itemInfo = () => {
         })
     }
 const items = (id) => {
-    xiv.data.get('item',id).then((res) => {
-        console.log(`res`, res)
+    xiv.data.get('item', id).then((res) => {
+        console.log(`Name`, res.Name)
+        console.log(`Type`, res.ItemSearchCategory.Name)
     })
 }
 
