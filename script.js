@@ -4,10 +4,20 @@ const xiv = new XIVAPI({
     private_key: process.env.PRIVATE_KEY
 })
 
-const getId = async() => {
-    let res = await xiv.search('Slithersand')
+let itemID
 
-    console.log(res)
+const itemInfo = () => {
+        xiv.search('Slithersand').then((res) => {
+            itemID = res.Results[0].ID
+            items(itemID)
+        }).catch((err) =>{
+            console.log(err)
+        })
+    }
+const items = (id) => {
+    xiv.data.get('item',id).then((res) => {
+        console.log(`res`, res)
+    })
 }
 
-getId()
+itemInfo()
