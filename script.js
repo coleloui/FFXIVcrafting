@@ -5,7 +5,7 @@ const xiv = new XIVAPI({
 })
 
 const getId = async() => {
-    let res = await xiv.search('Stuffed Khloe')
+    let res = await xiv.search('Slithersand')
 
     console.log(res)
 }
