@@ -34,7 +34,7 @@ const rInfo = async (info) => {
   const a = await API.items(info.Results[0].ID);
   //   console.log(`a`, a.Recipes);
   const b = await API.recipe(a.Recipes[0].ID);
-  //   loop(b);
+  console.log(`b`, b);
 };
 
 const question = async () => {
