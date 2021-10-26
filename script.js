@@ -20,14 +20,14 @@ const options = [
   },
 ];
 
-// const loop = async (thingy) => {
-//   console.log(`thingy`, thingy);
 
-// };
 
 const test = async (info) => {
   const a = await API.items(info.Results[0].ID);
-  console.log(`a`, a);
+  const des = a.Description.split('\n')[0]
+  console.log(`${a.Name}, ${des}`)
+  console.log(!a.Bonuses ? 'no combat bonuses' : a.Bonuses);
+
 };
 
 const rInfo = async (info) => {
